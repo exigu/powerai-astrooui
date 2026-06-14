@@ -180,15 +180,13 @@ if (headings) {
               <Content />
             </div>
             {
-              config.comment.enable &&
-                config.comment.provider === "open-remark" && (
-                  <div class="mt-10">
-                    <OpenRemarkComment
-                      siteKey={config.comment.siteKey}
-                      slug={`blog/${post.id}`}
-                    />
-                  </div>
-                )
+              config["open-remark-comment"].enable && (
+                <div class="mt-10">
+                  <OpenRemarkComment
+                    siteKey={config["open-remark-comment"].siteKey}
+                  />
+                </div>
+              )
             }
           </div>
         </div>
